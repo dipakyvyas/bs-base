@@ -1,0 +1,88 @@
+ <?php if ($this->pageCount):
+ if($this->params){
+$queryString=http_build_query($this->params) ;
+ }else{
+     $queryString="q=false";
+ }
+ if ($this->idfocus) {
+     $focus = $this->idfocus;
+ } else {
+     $focus = "";
+ }
+
+ ?>
+    <div class = "row">
+        <div>
+         <ul class="pagination">
+             <!-- Previous page link -->
+             <?php if (isset($this->previous)): 
+             $this->headLink(array('rel' => 'prev', 'href' => $this->url($this->route).'?'.$queryString.'&page='.$this->previous));
+             ?>
+                <li>
+                     <a href="<?php echo $this->url($this->route); ?>?<?php echo $queryString?>&page=<?php echo $this->first; ?><?php echo $focus;?>">
+                         <<
+                     </a>
+                 </li>
+                 <li>
+                     <a href="<?php echo $this->url($this->route); ?>?<?php echo $queryString?>&page=<?php echo $this->previous; ?><?php echo $focus?>">
+                         <
+                     </a>
+                 </li>
+             <?php else: ?>
+                <li class="disabled">
+                     <a href="#">
+                         <<
+                     </a>
+                 </li>
+                 <li class="disabled">
+                     <a href="#">
+                         <
+                     </a>
+                 </li>
+             <?php endif; ?>
+
+             <!-- Numbered page links -->
+             <?php foreach ($this->pagesInRange as $page): ?>
+                 <?php if ($page != $this->current): ?>
+                     <li>
+                         <a href="<?php echo $this->url($this->route);?>?<?php echo $queryString?>&page=<?php echo $page; ?><?php echo $focus;?>">
+                             <?php echo $page; ?>
+                         </a>
+                     </li>
+                 <?php else: ?>
+                     <li class="active">
+                         <a href="#"><?php echo $page; ?></a>
+                     </li>
+                 <?php endif; ?>
+             <?php endforeach; ?>
+
+             <!-- Next page link -->
+             <?php if (isset($this->next)):
+             $this->headLink(array('rel' => 'next',  'href' => $this->url($this->route).'?'.$queryString.'&page='.$this->next));
+             ?>
+                 <li>
+                     <a href="<?php echo $this->url($this->route); ?>?<?php echo $queryString?>&page=<?php echo $this->next; ?><?php echo $focus;?>">
+                         >
+                     </a>
+                 </li>
+                 <li>
+                     <a href="<?php echo $this->url($this->route); ?>?<?php echo $queryString?>&page=<?php echo (string)$this->last; ?><?php echo $focus;?>">
+                         >>
+                     </a>
+                 </li>
+             <?php else: ?>
+                 <li class="disabled">
+                     <a href="#">
+                         >
+                     </a>
+                 </li>
+                 <li class="disabled">
+                     <a href="#">
+                         >>
+                     </a>
+                 </li>
+             <?php endif; ?>
+         </ul>
+         </div>
+  </div>
+ <?php endif; ?>

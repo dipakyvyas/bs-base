@@ -1,0 +1,218 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "6d4bf6ee579dffba14efd3baa3025bdc",
+    "content-hash": "e26c7af0ee21ee67c9889726a5e32ea4",
+    "packages": [],
+    "packages-dev": [
+        {
+            "name": "broadshout/bs-locale",
+            "version": "v3.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/broadshout/bs-locale.git",
+                "reference": "9645f4314922214e99702369b205960f28ac842a"
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4",
+                "zendframework/zend-component-installer": "dev-master",
+                "zfcampus/zf-development-mode": "dev-master"
+            },
+            "type": "zf2-module",
+            "extra": {
+                "branch-alias": [],
+                "zf": []
+            },
+            "autoload": {
+                "psr-4": {
+                    "BsLocale\\": "src/"
+                },
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "BsLocaleTest\\": "test/"
+                }
+            },
+            "license": [
+                "Copyright 2014 Broadshout Technologies SARL"
+            ],
+            "authors": [
+                {
+                    "name": "Mat Wright",
+                    "email": "mat@bstechnologies.com",
+                    "homepage": "http://www.bstechnologies.com/"
+                }
+            ],
+            "description": "Module for handling various locale functions.",
+            "homepage": "http://bstechnologies.com",
+            "keywords": [
+                "zf2"
+            ],
+            "time": "2016-07-02 12:45:06"
+        },
+        {
+            "name": "zendframework/zend-component-installer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-component-installer.git",
+                "reference": "2799a0513c1af088f3c9b0f03197436ad7741165"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.zendframework.com/composer/zendframework-zend-component-installer-dev-master-e4aae5.zip",
+                "reference": "2799a0513c1af088f3c9b0f03197436ad7741165",
+                "shasum": "f14e2dff29c517464585622eeec1ec18633ca34b"
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "composer/composer": ">=1.0.0-alpha10",
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": "^4.7",
+                "roave/security-advisories": "dev-master",
+                "squizlabs/php_codesniffer": "^2.5"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "class": "Zend\\ComponentInstaller\\ComponentInstaller"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\ComponentInstaller\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "ZendTest\\ComponentInstaller\\": "test/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@test"
+                ],
+                "upload-coverage": [
+                    "coveralls -v"
+                ],
+                "cs-check": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit --colors=always"
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ]
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Composer plugin for automating component registration in zend-mvc and Expressive applications",
+            "time": "2016-06-27 21:19:02"
+        },
+        {
+            "name": "zfcampus/zf-development-mode",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zfcampus/zf-development-mode.git",
+                "reference": "dd755a3ea088de4d72e7bcaddc495c7c33855b14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.zendframework.com/composer/zfcampus-zf-development-mode-dev-master-9814c5.zip",
+                "reference": "dd755a3ea088de4d72e7bcaddc495c7c33855b14",
+                "shasum": "f92c3452d70f8583f88059088c0f81e163fab660"
+            },
+            "require": {
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": "^5.4",
+                "squizlabs/php_codesniffer": "^2.3.1"
+            },
+            "bin": [
+                "bin/zf-development-mode"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev",
+                    "dev-develop": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ZF\\DevelopmentMode\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "ZFTest\\DevelopmentMode\\": "test/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs",
+                    "@test"
+                ],
+                "coveralls": [
+                    "coveralls"
+                ],
+                "cs": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit"
+                ],
+                "test-coverage": [
+                    "phpunit --coverage-clover clover.xml"
+                ]
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Zend Framework development mode script",
+            "homepage": "http://github.com/zfcampus/zf-development-mode",
+            "keywords": [
+                "framework",
+                "zf2"
+            ],
+            "time": "2016-06-22 20:44:44"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "zendframework/zend-component-installer": 20,
+        "zfcampus/zf-development-mode": 20
+    },
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.0"
+    },
+    "platform-dev": []
+}

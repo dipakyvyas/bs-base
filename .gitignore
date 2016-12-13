@@ -1,0 +1,6 @@
+/vendor
+.DS_Store
+.project
+.buildpath
+.settings
+/data

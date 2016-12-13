@@ -1,0 +1,50 @@
+{
+  "name" : "broadshout/bs-base",
+  "description" : "Collection of generic models and data functions",
+
+  "require" : {
+    "php" : ">=7.0"
+  },
+
+  "require-dev" : {
+      "zendframework/zend-component-installer":"dev-master",
+      "zfcampus/zf-development-mode":"dev-master",
+       "broadshout/bs-locale" : "~3.0"
+  }
+  ,
+  "repositories" : [ {
+    "type" : "composer",
+    "url" : "https://packages.zendframework.com/"},
+{
+  			"type" : "git",
+    		"url" : "https://github.com/broadshout/bs-locale.git"
+  		}
+  ],
+   "suggests": {
+   "doctrine/doctrine-mongo-odm-module": "dev-master",
+    "broadshout/bs-locale" : "~3.0"
+    },
+  "keywords" : [ "framework", "zf2" ],
+  "minimum-stability" : "dev",
+  "prefer-stable": true,
+  "autoload" : {
+    "psr-4" : {
+      "BsBase\\" : "src/"
+    }
+
+    ,
+        "classmap": [
+            "./Module.php"
+        ]
+
+  },
+
+
+
+   "autoload-dev": {
+        "psr-4": { "BsBaseTest\\": "test/" }
+    },
+  "license" : [ "copyright bstechnologies SARL 2016" ],
+  "type" : "zf3-module",
+  "homepage" : "http://www.bstechnologies.com"
+}
